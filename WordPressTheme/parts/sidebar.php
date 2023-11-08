@@ -14,29 +14,30 @@
                 );
                 $popular_posts = new WP_Query($args);
                 ?>
-                <? if ($popular_posts->have_posts() ) : ?>
-                <? while ($popular_posts->have_posts()) : $popular_posts->the_post():?>
+                <?php if ($popular_posts->have_posts() ) : ?>
+                <?php while ($popular_posts->have_posts()) : $popular_posts->the_post(); ?>
                 <a href="<?php the_permalink(); ?>" class="sidebar-blog__item">
                     <div class="sidebar-blog-card">
                         <div class="sidebar-blog-card__img">
-                            <?php if(get_the_post_thumbnail()): ?>
+                            <?php if (get_the_post_thumbnail()) : ?>
                             <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>" />
-                            <?php else: ?>
+                            <?php else : ?>
                             <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/noimage.webp"
-                                alt="noimage>" />
+                                alt="no image" />
                             <?php endif; ?>
                         </div>
                         <div class="sidebar-blog-card__body">
                             <time class="sidebar-blog-card__meta"
                                 datetime="<?php the_time('c'); ?>"><?php the_time('Y/m/d'); ?></time>
                             <h3 class="sidebar-blog-card__title">
-                                <?php echo wp_trim_words( get_the_title(), 20, '…' ); ?></h3>
+                                <?php echo wp_trim_words(get_the_title(), 20, '…'); ?></h3>
                         </div>
                     </div>
                 </a>
                 <?php endwhile; ?>
                 <?php endif; ?>
-                <? wp_reset_postdata(); ?>
+                <?php wp_reset_postdata(); ?>
+
             </div>
         </div>
 
