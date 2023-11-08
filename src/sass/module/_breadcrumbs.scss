@@ -1,0 +1,21 @@
+@use "global" as *;
+
+.breadcrumbs {
+  padding: rem(10) 0;
+  color: $green;
+  font-size: rem(14);
+  font-weight: $normal;
+  letter-spacing: 0.03em;
+}
+
+.breadcrumbs a {
+  transition: opacity 0.3s;
+}
+
+.breadcrumbs a:hover {
+  opacity: 0.7;
+}
+
+.breadcrumbs.breadcrumbs--white {
+  color: $white;
+}

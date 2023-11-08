@@ -1,0 +1,18 @@
+@use "global" as *;
+
+.text {
+    font-size: rem(16);
+    line-height: 1.5;
+    font-weight: $normal;
+    color: $green;
+}
+
+.text--white {
+    @include mq("md") {
+        color: $white;
+    }
+}
+
+.text--accent-green {
+    color: $accent-green;
+}

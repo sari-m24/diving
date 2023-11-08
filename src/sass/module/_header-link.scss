@@ -1,0 +1,27 @@
+@use "global" as *;
+
+.header-link {
+    justify-content: center;
+    text-align: center;
+    color: $white;
+}
+
+.header-link__main {
+    font-size: rem(18);
+    line-height: 1.4;
+}
+
+.header-link__main::first-letter {
+    text-transform: uppercase;
+}
+
+.header-link__main.header-link__main--uppercase {
+    text-transform: uppercase;
+}
+
+.header-link__sub {
+    font-size: rem(10);
+    margin-top: rem(2);
+    font-weight: $normal;
+}
+

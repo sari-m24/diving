@@ -1,0 +1,46 @@
+@use "global" as *;
+
+.page-404 {
+  background-image: url("../images/common/bg-whale.png");
+  background-position: center rem(-25);
+  background-repeat: no-repeat;
+  background-size: rem(345) rem(345);
+  @include mq("md") {
+    background-position: 6%;
+    background-size: rem(698) rem(698);
+  }
+}
+
+.page-404__message {
+  color: $white;
+  text-align: center;
+}
+
+.page-404__text-big {
+  font-size: rem(80);
+  font-family: $second-font-family;
+  letter-spacing: 0.5em;
+  text-indent: rem(36.8);
+  line-height: 1;
+  font-weight: $normal;
+
+  @include mq("md") {
+    font-size: rem(160);
+    text-indent: rem(80);
+  }
+}
+
+.page-404__text {
+  margin-top: rem(5.2);
+  @include mq("md") {
+    margin-top: rem(43.6);
+  }
+}
+
+.page-404__button {
+  text-align: center;
+  margin-top: rem(38.4);
+  @include mq("md") {
+    margin-top: rem(78.6);
+  }
+}
