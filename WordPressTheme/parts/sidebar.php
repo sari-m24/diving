@@ -102,8 +102,8 @@
                 );
                 $campaign_posts = new WP_Query($args);
                 ?>
-                <? if ($campaign_posts->have_posts() ) : ?>
-                <? while ($campaign_posts->have_posts()) : $campaign_posts->the_post();
+                <?php if ($campaign_posts->have_posts() ) : ?>
+                <?php while ($campaign_posts->have_posts()) : $campaign_posts->the_post();
                 ?>
                 <div class="sidebar__item sidebar-campaign-card">
                     <div class="sidebar-campaign-card">
@@ -112,7 +112,7 @@
                             <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>" />
                             <?php else: ?>
                             <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/noimage.webp"
-                                alt="noimage>" />
+                                alt="no image" />
                             <?php endif; ?>
                         </div>
                         <div class="sidebar-campaign-card__title-wrapper">
@@ -132,7 +132,7 @@
                     </div>
                 </div>
                 <?php endwhile; ?>
-                <?php endif ?>
+                <?php endif; ?>
                 <? wp_reset_postdata(); ?>
             </div>
             <div class="sidebar__button">
