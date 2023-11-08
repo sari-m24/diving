@@ -15,8 +15,7 @@
                 $popular_posts = new WP_Query($args);
                 ?>
                 <? if ($popular_posts->have_posts() ) : ?>
-                <? while ($popular_posts->have_posts()) : $popular_posts->the_post();
-                ?>
+                <? while ($popular_posts->have_posts()) : $popular_posts->the_post():?>
                 <a href="<?php the_permalink(); ?>" class="sidebar-blog__item">
                     <div class="sidebar-blog-card">
                         <div class="sidebar-blog-card__img">
