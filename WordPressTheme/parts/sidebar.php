@@ -36,7 +36,7 @@
                     </div>
                 </a>
                 <?php endwhile; ?>
-                <?php endif ?>
+                <?php endif; ?>
                 <? wp_reset_postdata(); ?>
             </div>
         </div>
