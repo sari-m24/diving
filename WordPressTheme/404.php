@@ -13,8 +13,8 @@
                 </p>
             </div>
             <div class="page-404__button">
-                <a href="index.html" class="button button--white"><span class="button__animation">page&nbsp;<span
-                            class="button__uppercase">top</span></span></a>
+                <a href="<?php echo esc_url(home_url());?>" class="button button--white"><span
+                        class="button__animation">page&nbsp;<span class="button__uppercase">top</span></span></a>
             </div>
         </div>
     </section>

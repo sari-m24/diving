@@ -47,6 +47,13 @@
 </div>
 <main>
     <!-- Campaign -->
+    <?php $campaign_query = new WP_Query(
+                        array(
+                            'post_type'      => 'campaign',
+                            'posts_per_page' => 4,
+                        )
+                        ); ?>
+    <?php if ( $campaign_query->have_posts() ) : ?>
     <section class="campaign layout-top-campaign">
         <div class="campaign__inner inner">
             <div class="campaign__section-title section-title">
@@ -59,13 +66,6 @@
             </div>
             <div class="campaign__slider campaign-swiper swiper js-campaign-swiper">
                 <div class="campaign__cards swiper-wrapper">
-                    <?php $campaign_query = new WP_Query(
-                        array(
-                            'post_type'      => 'campaign',
-                            'posts_per_page' => 4,
-                        )
-                        ); ?>
-                    <?php if ( $campaign_query->have_posts() ) : ?>
                     <?php while ( $campaign_query->have_posts() ) : ?>
                     <?php $campaign_query->the_post(); ?>
                     <div class="swiper-slide campaign__card">
@@ -100,8 +100,6 @@
                         </div>
                     </div>
                     <?php endwhile; ?>
-                    <?php endif; ?>
-                    <?php wp_reset_postdata(); ?>
                 </div>
             </div>
         </div>
@@ -111,6 +109,8 @@
         </div>
         </div>
     </section>
+    <?php endif; ?>
+    <?php wp_reset_postdata(); ?>
     <!-- About us -->
     <section class="about-us layout-top-about-us">
         <div class="about-us__inner inner">
@@ -177,6 +177,13 @@
         </div>
     </section>
     <!-- Blog -->
+    <?php $blog_query = new WP_Query(
+                        array(
+                            'post_type'      => 'post',
+                            'posts_per_page' => 3,
+                        )
+                        ); ?>
+    <?php if ( $blog_query->have_posts() ) : ?>
     <section class="blog layout-top-blog">
         <div class="blog__inner inner">
             <div class="blog__illust-top">
@@ -187,13 +194,6 @@
                 <h2 class="section-title__sub">ブログ</h2>
             </div>
             <div class="blog__cards blog-cards">
-                <?php $blog_query = new WP_Query(
-                        array(
-                            'post_type'      => 'post',
-                            'posts_per_page' => 3,
-                        )
-                        ); ?>
-                <?php if ( $blog_query->have_posts() ) : ?>
                 <?php while ( $blog_query->have_posts() ) : ?>
                 <?php $blog_query->the_post(); ?>
                 <a href="<?php the_permalink();?>" class="blog-cards__item">
@@ -217,8 +217,6 @@
                     </div>
                 </a>
                 <?php endwhile; ?>
-                <?php endif; ?>
-                <?php wp_reset_postdata(); ?>
             </div>
             <div class="blog__button">
                 <a href="<?php echo esc_url(home_url('/blog/'));?>" class="button"><span
@@ -226,7 +224,16 @@
             </div>
         </div>
     </section>
+    <?php endif; ?>
+    <?php wp_reset_postdata(); ?>
     <!-- Voice -->
+    <?php $voice_query = new WP_Query(
+                        array(
+                            'post_type'      => 'voice',
+                            'posts_per_page' => 2,
+                        )
+                        ); ?>
+    <?php if ( $voice_query->have_posts() ) : ?>
     <section class="voice layout-top-voice">
         <div class="voice__inner inner">
             <div class="voice__illust-top">
@@ -237,13 +244,6 @@
                 <h2 class="section-title__sub">お客様の声</h2>
             </div>
             <div class="voice__cards voice-cards">
-                <?php $voice_query = new WP_Query(
-                        array(
-                            'post_type'      => 'voice',
-                            'posts_per_page' => 2,
-                        )
-                        ); ?>
-                <?php if ( $voice_query->have_posts() ) : ?>
                 <?php while ( $voice_query->have_posts() ) : ?>
                 <?php $voice_query->the_post(); ?>
                 <div class="voice-cards__item voice-card">
@@ -289,8 +289,6 @@
                     </p>
                 </div>
                 <?php endwhile; ?>
-                <?php endif; ?>
-                <?php wp_reset_postdata(); ?>
             </div>
             <div class="voice__button">
                 <a href="<?php echo esc_url(home_url('/voice/'));?>" class="button"><span
@@ -301,7 +299,17 @@
             </div>
         </div>
     </section>
+    <?php endif; ?>
+    <?php wp_reset_postdata(); ?>
     <!-- Price -->
+    <?php $price_query = new WP_Query(
+                        array(
+                            'post_type'      => 'price',
+                            'posts_per_page' => 4,
+                            'order' => 'ASC'
+                        )
+                        ); ?>
+    <?php if ( $price_query->have_posts() ) : ?>
     <section class="price layout-top-price">
         <div class="price__inner inner">
             <div class="price__section-title section-title">
@@ -318,14 +326,6 @@
                     </picture>
                 </div>
                 <div class="price__lists-box">
-                    <?php $price_query = new WP_Query(
-                        array(
-                            'post_type'      => 'price',
-                            'posts_per_page' => 4,
-                            'order' => 'ASC'
-                        )
-                        ); ?>
-                    <?php if ( $price_query->have_posts() ) : ?>
                     <?php while ( $price_query->have_posts() ) : ?>
                     <?php $price_query->the_post(); ?>
                     <ul class="price__lists">
@@ -355,8 +355,6 @@
                         </li>
                     </ul>
                     <?php endwhile; ?>
-                    <?php endif; ?>
-                    <?php wp_reset_postdata(); ?>
                 </div>
             </div>
             <div class="price__button">
@@ -368,6 +366,8 @@
             </div>
         </div>
     </section>
+    <?php endif; ?>
+    <?php wp_reset_postdata(); ?>
     <!-- Contact-->
     <section class="contact layout-top-contact">
         <div class="contact__inner inner">

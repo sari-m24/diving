@@ -88,6 +88,8 @@
                         </div>
                     </div>
                     <?php endwhile; ?>
+                    <?php else: ?>
+                    <p class="text">投稿記事はありません。</p>
                     <?php endif; ?>
                 </div>
             </div>

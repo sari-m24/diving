@@ -222,26 +222,54 @@ $(function () {
   });
 });
 
+// ContactForm7エラー表示
 jQuery(document).ready(function ($) {
-  // Contact Form 7のエラーが発生したときのイベント
-  document.addEventListener(
-    "wpcf7invalid",
-    function (event) {
-      // すべてのエラー表示をクリア
-      $(".js-error").removeClass("js-error");
+  // フォームが送信されたときにのみエラーを表示
+  $(".wpcf7").on("submit", function () {
+    // エラー表示を有効化
+    $(this).addClass("js-errors");
+  });
 
-      // エラーが発生したinputとtextareaタグにスタイルを適用
-      $(event.detail.apiResponse.invalidFields).each(function (index, field) {
-        if (field.name.indexOf("textarea-") !== -1) {
-          $('.form__textarea[name="' + field.name + '"]').addClass("js-error");
-        } else {
-          $('.form__input-text[name="' + field.name + '"]').addClass(
-            "js-error"
-          );
-        }
-      });
-    },
-    false
+  // フォームのエラースタイルの初期化
+  $(".wpcf7").each(function () {
+    // フォームの初期化時にエラー表示を無効化
+    $(this).removeClass("js-errors");
+  });
+
+  // カスタムCSSでエラースタイルを制御
+  // .show-errors クラスが付与されている場合のみエラースタイルを適用
+  var customStyles = `
+      .wpcf7:not(.js-errors) .wpcf7-not-valid {
+        border: 1px solid $accent-green;
+        backgroun-color: $white;
+      }
+  `;
+  $("head").append("<style>" + customStyles + "</style>");
+});
+
+$(document).ready(function () {
+  // 初期状態で送信ボタンを無効にする
+  $(".js-submit")
+    .addClass("disabled")
+    .css({ "pointer-events": "none", opacity: "0.5" });
+
+  // CF7の承認承諾チェックボックスの状態が変わったときの処理
+  $(document).on(
+    "change",
+    '.wpcf7-acceptance input[type="checkbox"]',
+    function () {
+      if ($(this).is(":checked")) {
+        // チェックされた場合、送信ボタンを有効にする
+        $(".js-submit")
+          .removeClass("disabled")
+          .css({ "pointer-events": "auto", opacity: "1" });
+      } else {
+        // チェックされていない場合、送信ボタンを無効にする
+        $(".js-submit")
+          .addClass("disabled")
+          .css({ "pointer-events": "none", opacity: "0.5" });
+      }
+    }
   );
 });
 

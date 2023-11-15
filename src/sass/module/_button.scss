@@ -97,6 +97,22 @@
   color: $accent-green;
 }
 
+// .button.button--padding.disabled {
+//   opacity: 0.5;
+//   cursor: default;
+//   pointer-events: none;
+// }
+
+// .button.button--padding.disabled:hover .button__animation::before,
+// .button.button--padding.disabled:hover .button__animation {
+//   transform: none;
+//   color: $white;
+// }
+
+// .button.button--padding.disabled .button__animation::after {
+//   background-image: url("../images/common/arrow.png");
+// }
+
 .button.button--white::after {
   border: 1px solid $white;
 }

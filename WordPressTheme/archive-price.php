@@ -19,20 +19,24 @@
                 <?php if(have_posts()): ?>
                 <?php $count = 0; ?>
                 <?php while(have_posts()): the_post(); ?>
-                <?php $count++; ?>
+                <?php 
+                $count++;
+                $price_list = CFS()->get('price_list');
+                if (!empty($price_list) && is_array($price_list)):
+                    $rowCount = count($price_list); // フィールドの行数を取得
+                    if ($rowCount > 0):  // 行が1行以上ある場合のみ表を表示
+                ?>
                 <div id="price-table<?php echo $count; ?>" class="archive-price__table price-table">
                     <div class="price-table__title-wrapper">
                         <h3 class="price-table__title"><?php the_title(); ?></h3>
                     </div>
                     <dl class="price-table__body">
                         <?php
-                        $price_list = CFS()->get('price_list');
-                        $pairs_to_display = 3;
+                        $pairs_to_display = 2;
                         $pairs_filled = 0;
-                        if (!empty($price_list) && is_array($price_list)):
-                            $rowCount = count($price_list); // フィールドの行数を取得
-                            foreach ($price_list as $price_item):  // $post を $price_item に変更
-                                $pairs_filled++;
+
+                        foreach ($price_list as $price_item):
+                            $pairs_filled++;
                         ?>
                         <div class="price-table__content-wrapper">
                             <dt class="price-table__content">
@@ -42,32 +46,23 @@
                                 ¥<?php echo (!empty($price_item['price'])) ? $price_item['price'] : '-'; ?></dd>
                         </div>
                         <?php endforeach; ?>
-                        <?php else:
-                            $rowCount = 0;  // 行数が0の場合を追加
-                        endif; ?>
 
                         <?php
                         // 空行の調整
                         $empty_rows_needed = $pairs_to_display - $pairs_filled;
-                        if ($rowCount == 0) {
-                            $empty_rows_needed = 3;
-                        } elseif ($rowCount == 1) {
-                            $empty_rows_needed = 2;
-                        } elseif ($rowCount == 2) {
-                            $empty_rows_needed = 1;
-                        } else {
-                            $empty_rows_needed = 0;
-                        }
+                        if ($empty_rows_needed > 0) {  // 空行が必要な場合のみ
                         for ($i = 0; $i < $empty_rows_needed; $i++): ?>
                         <div class="price-table__content-wrapper">
                             <dt class="price-table__content">&emsp;</dt>
                             <dd class="price-table__price">&emsp;</dd>
                         </div>
-                        <?php endfor; ?>
+                        <?php endfor; }?>
                     </dl>
                 </div>
-
-                <?php endwhile; ?>
+                <?php
+                    endif;
+                endif;
+                endwhile; ?>
                 <?php endif; ?>
             </div>
         </div>

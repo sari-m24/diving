@@ -1391,12 +1391,12 @@ main {
 }
 
 .form__checkbox,
-.form__acceptance-box {
+.form__acceptance .wpcf7-acceptance {
 	position: relative;
 }
 
 .form__checkbox input[type=checkbox] + span,
-.form__acceptance-box input[type=checkbox] + span {
+.form__acceptance .wpcf7-acceptance input[type=checkbox] + span {
 	cursor: pointer;
 	display: inline-block;
 	font-size: 1rem;
@@ -1407,7 +1407,7 @@ main {
 	transition: 0.3s ease;
 }
 
-.form__acceptance-box input[type=checkbox] + span {
+.form__acceptance .wpcf7-acceptance input[type=checkbox] + span {
 	font-size: 0.875rem;
 	line-height: 1.5714285714;
 	margin: 0;
@@ -1415,7 +1415,7 @@ main {
 }
 
 .form__checkbox input[type=checkbox] + span::before,
-.form__acceptance-box input[type=checkbox] + span::before {
+.form__acceptance .wpcf7-acceptance input[type=checkbox] + span::before {
 	background: #FFFFFF;
 	border: 1px solid #408F95;
 	content: "";
@@ -1428,20 +1428,20 @@ main {
 	width: 0.9375rem;
 }
 
-.form__acceptance-box input[type=checkbox] + span::before {
+.form__acceptance .wpcf7-acceptance input[type=checkbox] + span::before {
 	height: 1.375rem;
 	top: 23%;
 	width: 1.375rem;
 }
 
 .form__checkbox input[type=checkbox] + span::after,
-.form__acceptance-box input[type=checkbox] + span::after {
+.form__acceptance .wpcf7-acceptance input[type=checkbox] + span::after {
 	opacity: 0;
 	transition: 0.3s ease;
 }
 
 .form__checkbox input[type=checkbox]:checked + span::after,
-.form__acceptance-box input[type=checkbox]:checked + span::after {
+.form__acceptance .wpcf7-acceptance input[type=checkbox]:checked + span::after {
 	border-bottom: 2px solid #c94800;
 	border-left: 2px solid #c94800;
 	content: "";
@@ -1457,7 +1457,7 @@ main {
 	width: 0.61875rem;
 }
 
-.form__acceptance-box input[type=checkbox]:checked + span::after {
+.form__acceptance .wpcf7-acceptance input[type=checkbox]:checked + span::after {
 	left: 0.26875rem;
 	top: 23%;
 }
@@ -1493,22 +1493,25 @@ main {
 	display: none;
 }
 
-.wpcf7-not-valid {
+.wpcf7.js-errors .wpcf7-not-valid {
 	background-color: rgba(201, 72, 0, 0.2);
 	border: 1px solid #c94800;
 }
 
-.wpcf7-not-valid::-moz-placeholder {
+.wpcf7.js-errors .wpcf7-not-valid::-moz-placeholder {
 	color: #FFFFFF;
 }
 
-.wpcf7-not-valid::placeholder {
+.wpcf7.js-errors .wpcf7-not-valid::placeholder {
 	color: #FFFFFF;
 }
 
-.form__checklist span.wpcf7-not-valid,
-.form__acceptance span.wpcf7-not-valid {
-	border: none;
+/* チェックボックスのエラースタイル */
+
+.wpcf7.js-errors .form__checkbox.wpcf7-not-valid input[type=checkbox] + span::before,
+.wpcf7.js-errors .form__acceptance .wpcf7-acceptance.wpcf7-not-valid input[type=checkbox] + span::before {
+	background-color: rgba(201, 72, 0, 0.2);
+	border: 1px solid #c94800;
 }
 
 .wpcf7 form .wpcf7-response-output {
@@ -3945,11 +3948,11 @@ html {
 	padding: 0.5rem 1rem 0.3125rem;
 }
 
-.form__acceptance-box input[type=checkbox] + span::before {
+.form__acceptance .wpcf7-acceptance input[type=checkbox] + span::before {
 	top: 50%;
 }
 
-.form__acceptance-box input[type=checkbox]:checked + span::after {
+.form__acceptance .wpcf7-acceptance input[type=checkbox]:checked + span::after {
 	top: 53%;
 }
 

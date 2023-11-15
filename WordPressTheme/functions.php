@@ -109,13 +109,6 @@ if($query -> is_post_type_archive('faq')){
 	}
 }
 
-add_filter( 'use_block_editor_for_post', function( $use_block_editor, $post ) {
-	if ( 'price' === $post->post_type ) {
-		$use_block_editor = false;
-	}
-	return $use_block_editor;
-}, 10, 2 );
-
 // Contact Form 7で自動挿入されるPタグ、brタグを削除
 add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
 function wpcf7_autop_return_false() {

@@ -105,12 +105,12 @@
 }
 
 .form__checkbox,
-.form__acceptance-box {
+.form__acceptance .wpcf7-acceptance {
   position: relative;
 }
 
 .form__checkbox input[type="checkbox"] + span,
-.form__acceptance-box input[type="checkbox"] + span {
+.form__acceptance .wpcf7-acceptance input[type="checkbox"] + span {
   display: inline-block;
   position: relative;
   padding: 0 0 0 rem(22.2);
@@ -121,7 +121,7 @@
   transition: 0.3s ease;
 }
 
-.form__acceptance-box input[type="checkbox"] + span {
+.form__acceptance .wpcf7-acceptance input[type="checkbox"] + span {
   padding: 0 0 0 rem(30);
   font-size: rem(14);
   margin: 0;
@@ -129,7 +129,7 @@
 }
 
 .form__checkbox input[type="checkbox"] + span::before,
-.form__acceptance-box input[type="checkbox"] + span::before {
+.form__acceptance .wpcf7-acceptance input[type="checkbox"] + span::before {
   position: absolute;
   content: "";
   top: 40%;
@@ -142,7 +142,7 @@
   display: block;
 }
 
-.form__acceptance-box input[type="checkbox"] + span::before {
+.form__acceptance .wpcf7-acceptance input[type="checkbox"] + span::before {
   top: 23%;
   width: rem(22);
   height: rem(22);
@@ -152,13 +152,16 @@
 }
 
 .form__checkbox input[type="checkbox"] + span::after,
-.form__acceptance-box input[type="checkbox"] + span::after {
+.form__acceptance .wpcf7-acceptance input[type="checkbox"] + span::after {
   opacity: 0;
   transition: 0.3s ease;
 }
 
 .form__checkbox input[type="checkbox"]:checked + span::after,
-.form__acceptance-box input[type="checkbox"]:checked + span::after {
+.form__acceptance
+  .wpcf7-acceptance
+  input[type="checkbox"]:checked
+  + span::after {
   content: "";
   position: absolute;
   top: 43%;
@@ -175,7 +178,10 @@
   border-bottom: 2px solid #c94800;
 }
 
-.form__acceptance-box input[type="checkbox"]:checked + span::after {
+.form__acceptance
+  .wpcf7-acceptance
+  input[type="checkbox"]:checked
+  + span::after {
   top: 23%;
   left: rem(4.3);
   @include mq("md") {
@@ -222,7 +228,7 @@
   display: none;
 }
 
-.wpcf7-not-valid {
+.wpcf7.js-errors .wpcf7-not-valid {
   background-color: rgba($color: #c94800, $alpha: 0.2);
   border: 1px solid #c94800;
   &::placeholder {
@@ -230,9 +236,18 @@
   }
 }
 
-.form__checklist span.wpcf7-not-valid,
-.form__acceptance span.wpcf7-not-valid {
-  border: none;
+/* チェックボックスのエラースタイル */
+.wpcf7.js-errors
+  .form__checkbox.wpcf7-not-valid
+  input[type="checkbox"]
+  + span::before,
+.wpcf7.js-errors
+  .form__acceptance
+  .wpcf7-acceptance.wpcf7-not-valid
+  input[type="checkbox"]
+  + span::before {
+  border: 1px solid #c94800;
+  background-color: rgba($color: #c94800, $alpha: 0.2);
 }
 
 .wpcf7 form .wpcf7-response-output {

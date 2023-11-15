@@ -35,6 +35,8 @@
                     </div>
                 </a>
                 <?php endwhile; ?>
+                <?php else: ?>
+                <p class="text">投稿記事はありません。</p>
                 <?php endif; ?>
                 <?php wp_reset_postdata(); ?>
 
@@ -81,6 +83,8 @@
                     </div>
                 </div>
                 <?php endwhile; ?>
+                <?php else: ?>
+                <p class="text">投稿記事はありません。</p>
                 <?php endif; ?>
                 <?php wp_reset_postdata(); ?>
                 <div class="sidebar__button">
@@ -132,6 +136,8 @@
                     </div>
                 </div>
                 <?php endwhile; ?>
+                <?php else: ?>
+                <p class="text">投稿記事はありません。</p>
                 <?php endif; ?>
                 <? wp_reset_postdata(); ?>
             </div>
