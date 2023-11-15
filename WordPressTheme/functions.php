@@ -288,3 +288,12 @@ function Change_menulabel() {
     return true;
   }
   add_action('init', 'my_unregister_taxonomies');
+
+
+// reCaptcha読み込み制限
+function recaptcha_limitation() {
+    if( ! is_page( 'contact' )){
+     wp_deregister_script( 'google-recaptcha' );
+    }
+   }
+   add_action( 'wp_enqueue_scripts', 'recaptcha_limitation', 50 );

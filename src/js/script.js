@@ -273,6 +273,28 @@ $(document).ready(function () {
   );
 });
 
+// エンターキー押しても送信されないようにする
+function submitStop(e) {
+  if (!e) var e = window.event;
+  if (e.keyCode == 13) return false;
+}
+window.onload = function () {
+  var list = document.getElementsByTagName("input");
+  for (var i = 0; i < list.length; i++) {
+    if (
+      list[i].type == "email" ||
+      list[i].type == "password" ||
+      list[i].type == "text" ||
+      list[i].type == "number" ||
+      list[i].type == "tel"
+    ) {
+      list[i].onkeypress = function (event) {
+        return submitStop(event);
+      };
+    }
+  }
+};
+
 jQuery(document).ready(function ($) {
   // ビューポートの幅に基づいて判定
   if ($(window).width() < 768) {
