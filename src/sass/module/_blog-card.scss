@@ -26,6 +26,7 @@
 }
 
 .blog-card__body-top {
+  flex-grow: 1;
   margin-top: rem(19);
   @include mq("md") {
     margin-top: rem(17.4);

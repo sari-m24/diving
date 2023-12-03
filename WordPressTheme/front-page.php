@@ -134,8 +134,9 @@
                         </h3>
                         <div class="about-us__message-sub-wrapper">
                             <p class="about-us__message-sub text text--white">
-                                ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />
-                                ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
+                                太陽のように明るく温かい海の体験を。<br />
+                                私たちは、ダイビングの楽しさと海の大切さを伝えることに情熱を注いでいます。一人一人に寄り添った指導で、安全かつ楽しいダイビングを実現。<br />
+                                Soleilと共に、海の美しさを存分に味わい、未来に続く美しい海を守りましょう。
                             </p>
                             <div class="about-us__button">
                                 <a href="<?php echo esc_url(home_url('/about-us/'));?>" class="button"><span

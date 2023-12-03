@@ -610,6 +610,7 @@ main {
 }
 
 .blog-card__body-top {
+	flex-grow: 1;
 	margin-top: 1.1875rem;
 }
 
@@ -851,12 +852,9 @@ main {
 	justify-content: space-between;
 }
 
-.campaign-card__img {
-	aspect-ratio: 280/188;
-}
-
 .campaign-card__img img {
 	-o-object-fit: cover;
+	aspect-ratio: 280/188;
 	height: 100%;
 	object-fit: cover;
 	width: 100%;
@@ -3706,7 +3704,7 @@ html {
 	margin-top: 5.125rem;
 }
 
-.campaign-card__img {
+.campaign-card__img img {
 	aspect-ratio: 334/223;
 }
 
