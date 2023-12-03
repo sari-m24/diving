@@ -48,7 +48,7 @@
   img {
     margin-top: rem(24);
     aspect-ratio: 345/231;
-    object-fit: cover;
+    object-fit: contain;
     height: 100%;
     width: 100%;
     @include mq("md") {

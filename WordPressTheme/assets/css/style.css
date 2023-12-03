@@ -2793,11 +2793,11 @@ main {
 }
 
 .single-body__content img {
-	-o-object-fit: cover;
+	-o-object-fit: contain;
 	aspect-ratio: 345/231;
 	height: 100%;
 	margin-top: 1.5rem;
-	object-fit: cover;
+	object-fit: contain;
 	width: 100%;
 }
 
