@@ -139,13 +139,13 @@
                                     <a href="<?php echo esc_url(home_url('/price/'));?>">料金一覧</a>
                                 </li>
                                 <li class="nav__item nav__item--no-icon">
-                                    <a href="<?php echo esc_url(home_url('/price/'));?>">ライセンス講習</a>
+                                    <a href="<?php echo esc_url(home_url('/price#price-table1'));?>">ライセンス講習</a>
                                 </li>
                                 <li class="nav__item nav__item--no-icon">
-                                    <a href="<?php echo esc_url(home_url('/price/'));?>">体験ダイビング</a>
+                                    <a href="<?php echo esc_url(home_url('/price#price-table2'));?>">体験ダイビング</a>
                                 </li>
                                 <li class="nav__item nav__item--no-icon">
-                                    <a href="<?php echo esc_url(home_url('/price/'));?>">ファンダイビング</a>
+                                    <a href="<?php echo esc_url(home_url('/price#price-table3'));?>">ファンダイビング</a>
                                 </li>
                             </ul>
                         </div>
