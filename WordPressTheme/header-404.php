@@ -90,13 +90,16 @@
                                     <a href="<?php echo esc_url(home_url('/campaign/'));?>">キャンペーン</a>
                                 </li>
                                 <li class="nav__item nav__item--no-icon">
-                                    <a href="#">ライセンス取得</a>
+                                    <a
+                                        href="<?php echo esc_url(home_url('/campaign_category/license-course'));?>">ライセンス取得</a>
                                 </li>
                                 <li class="nav__item nav__item--no-icon">
-                                    <a href="#">貸切体験ダイビング</a>
+                                    <a
+                                        href="<?php echo esc_url(home_url('/campaign_category/trial-diving'));?>">貸切体験ダイビング</a>
                                 </li>
                                 <li class="nav__item nav__item--no-icon">
-                                    <a href="#">ファンダイビング</a>
+                                    <a
+                                        href="<?php echo esc_url(home_url('/campaign_category/fun-diving'));?>">ファンダイビング</a>
                                 </li>
                             </ul>
                             <ul class="nav__items">
@@ -111,13 +114,13 @@
                                     <a href="<?php echo esc_url(home_url('/information/'));?>">ダイビング情報</a>
                                 </li>
                                 <li class="nav__item nav__item--no-icon">
-                                    <a href="page-information.html">ライセンス講習</a>
+                                    <a href="<?php echo esc_url(home_url('/information#tab1'));?>">ライセンス講習</a>
                                 </li>
                                 <li class="nav__item nav__item--no-icon">
-                                    <a href="page-information.html">体験ダイビング</a>
+                                    <a href="<?php echo esc_url(home_url('/information#tab3'));?>">体験ダイビング</a>
                                 </li>
                                 <li class="nav__item nav__item--no-icon">
-                                    <a href="page-information.html">ファンダイビング</a>
+                                    <a href="<?php echo esc_url(home_url('/information#tab2'));?>">ファンダイビング</a>
                                 </li>
                             </ul>
                             <ul class="nav__items">
@@ -137,13 +140,13 @@
                                     <a href="<?php echo esc_url(home_url('/price/'));?>">料金一覧</a>
                                 </li>
                                 <li class="nav__item nav__item--no-icon">
-                                    <a href="archive-price.html">ライセンス講習</a>
+                                    <a href="<?php echo esc_url(home_url('/price/'));?>">ライセンス講習</a>
                                 </li>
                                 <li class="nav__item nav__item--no-icon">
-                                    <a href="archive-price.html">体験ダイビング</a>
+                                    <a href="<?php echo esc_url(home_url('/price/'));?>">体験ダイビング</a>
                                 </li>
                                 <li class="nav__item nav__item--no-icon">
-                                    <a href="archive-price.html">ファンダイビング</a>
+                                    <a href="<?php echo esc_url(home_url('/price/'));?>">ファンダイビング</a>
                                 </li>
                             </ul>
                         </div>
